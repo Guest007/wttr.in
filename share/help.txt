@@ -1,7 +1,7 @@
 Usage:
 
     $ curl wttr.in          # current location
-    $ curl wttr.in/muc      # weather in the Munic airport
+    $ curl wttr.in/muc      # weather in the Munich airport
 
 Supported location types:
 
@@ -22,6 +22,7 @@ Units:
 
     ?m                      # metric (SI) (used by default everywhere except US)
     ?u                      # USCS (used by default in US)
+    ?M                      # show wind speed in m/s
 
 View options:
 
@@ -36,18 +37,20 @@ View options:
 PNG options:
 
     /paris.png              # generate a PNG file
-    ?p                      # add frame arond the output
+    ?p                      # add frame around the output
     ?t                      # transparency 150
     transparency=...        # transparency from 0 to 255 (255 = not transparent)
 
 Options can be combined:
 
     /Paris?0pq
+    /Paris?0pq&lang=fr
     /Paris_0pq.png          # in PNG the file mode are specified after _
     /Rome_0pq_lang=it.png   # long options are separated with underscore
 
 Localization:
 
+    $ curl fr.wttr.in/Paris
     $ curl wttr.in/paris?lang=fr
     $ curl -H "Accept-Language: fr" wttr.in/paris
 
